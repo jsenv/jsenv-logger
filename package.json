@@ -1,0 +1,45 @@
+{
+  "name": "@jsenv/logger",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsenv/jsenv-logger"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "module": "index.js",
+  "files": [
+    "/src/",
+    "/index.js"
+  ],
+  "scripts": {
+    "test": "node ./script/test/test.js",
+    "eslint-check": "eslint .",
+    "prettier-check": "node ./script/prettier-check/prettier-check.js",
+    "generate-coverage": "node ./script/generate-coverage/generate-coverage.js",
+    "upload-coverage": "node ./script/upload-coverage/upload-coverage.js",
+    "generate-import-map": "node ./script/generate-import-map/generate-import-map.js",
+    "clean": "rimraf dist && rimraf coverage",
+    "reinstall": "npm run clean && rimraf node_modules && npm install",
+    "postinstall": "npm run generate-import-map",
+    "prepublishOnly": "node ./script/transform-package/remove-postinstall.js",
+    "postpublish": "node ./script/transform-package/restore-postinstall.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@jsenv/codecov-upload": "1.7.0",
+    "@jsenv/eslint-config": "10.0.0",
+    "@jsenv/execution": "4.2.0",
+    "@jsenv/node-launcher": "4.5.0",
+    "@jsenv/node-module-import-map": "6.4.0",
+    "@jsenv/operating-system-path": "2.4.0",
+    "@jsenv/prettier-config": "1.0.0",
+    "@jsenv/prettier-check-project": "3.4.0",
+    "@jsenv/testing": "2.7.0",
+    "eslint": "6.3.0",
+    "prettier": "1.18.2",
+    "rimraf": "3.0.0"
+  }
+}
