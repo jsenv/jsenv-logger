@@ -25,6 +25,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: yarn install, build, and test
+        run: yarn config set '//npm.pkg.github.com/:_authToken' '${{ secrets.GITHUB_TOKEN }}'
+        run: yarn config set @jsenv:registry https://npm.pkg.github.com
         run: yarn install
         run: yarn eslint-check
         run: yarn prettier-check
