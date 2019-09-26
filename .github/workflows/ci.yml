@@ -24,14 +24,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install, build, and test
-        run: |
-          npm install
-          npm run generate-import-map
-          npm run eslint-check
-          npm run prettier-check
-          npm run generate-coverage
-          npm run upload-coverage
+      - name: yarn install, build, and test
+        run: yarn install
+        run: yarn eslint-check
+        run: yarn prettier-check
+        run: yarn generate-coverage
+        run: yarn upload-coverage
         env:
           CI: true
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
