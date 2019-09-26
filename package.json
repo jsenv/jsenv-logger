@@ -7,7 +7,8 @@
     "url": "https://github.com/jsenv/jsenv-logger"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
   },
   "module": "index.js",
   "files": [
@@ -27,18 +28,20 @@
     "prepublishOnly": "node ./script/transform-package/remove-postinstall.js",
     "postpublish": "node ./script/transform-package/restore-postinstall.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@jsenv/href": "1.0.0"
+  },
   "devDependencies": {
-    "@jsenv/codecov-upload": "1.7.0",
+    "@jsenv/codecov-upload": "1.8.0",
     "@jsenv/eslint-config": "10.0.0",
-    "@jsenv/execution": "4.2.0",
-    "@jsenv/node-launcher": "4.5.0",
-    "@jsenv/node-module-import-map": "6.4.0",
+    "@jsenv/execution": "5.12.0",
+    "@jsenv/node-launcher": "4.16.0",
+    "@jsenv/node-module-import-map": "7.0.0",
     "@jsenv/operating-system-path": "2.4.0",
     "@jsenv/prettier-config": "1.0.0",
     "@jsenv/prettier-check-project": "3.4.0",
-    "@jsenv/testing": "2.7.0",
-    "eslint": "6.3.0",
+    "@jsenv/testing": "3.3.0",
+    "eslint": "6.4.0",
     "prettier": "1.18.2",
     "rimraf": "3.0.0"
   }
