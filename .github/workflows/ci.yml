@@ -25,13 +25,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: yarn install, build, and test
-        run: yarn config set '//npm.pkg.github.com/:_authToken' '${{ secrets.GITHUB_TOKEN }}'
-        run: yarn config set @jsenv:registry https://npm.pkg.github.com
-        run: yarn install
-        run: yarn eslint-check
-        run: yarn prettier-check
-        run: yarn generate-coverage
-        run: yarn upload-coverage
+        run: |
+          yarn config set '//npm.pkg.github.com/:_authToken' '${{ secrets.GITHUB_TOKEN }}'
+          yarn config set @jsenv:registry https://npm.pkg.github.com
+          yarn install
+          yarn eslint-check
+          yarn prettier-check
+          yarn generate-coverage
+          yarn upload-coverage
         env:
           CI: true
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
