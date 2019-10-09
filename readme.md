@@ -1,7 +1,7 @@
 # jsenv-logger
 
 [![github package](https://img.shields.io/github/package-json/v/jsenv/jsenv-logger.svg?label=package&logo=github)](https://github.com/jsenv/jsenv-logger/packages)
-[![continuous testing status](https://github.com/jsenv/jsenv-logger/workflows/continuous%20testing/badge.svg)](https://github.com/jsenv/jsenv-logger/actions?workflow=continuous+testing)
+[![workflow status](https://github.com/jsenv/jsenv-logger/workflows/continuous%20testing/badge.svg)](https://github.com/jsenv/jsenv-logger/actions?workflow=continuous+testing)
 [![codecov](https://codecov.io/gh/jsenv/jsenv-logger/branch/master/graph/badge.svg)](https://codecov.io/gh/jsenv/jsenv-logger)
 
 ## Introduction
