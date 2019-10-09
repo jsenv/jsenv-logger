@@ -19,21 +19,16 @@ jobs:
           node-version: 12.8.0
       - name: npm configuration
         run: npm config set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN }}
-      - name: generate dist folder for base
+      - name: get folder for base
         run: |
           git checkout $GITHUB_BASE_REF
-          npm install
-          npm run dist
-      - name: save dist folder for later
+      - name: save folder for later
         run: |
           mkdir -p ../base
-          mv ./dist ../base/dist
-      - name: generate dist folder for head
+          mv ./src ../base/src
+      - name: get folder for head
         run: |
           git checkout $GITHUB_HEAD_REF
-          # maybe we should rm -rf node_modules here ?
-          npm install
-          npm run dist
       - name: report size impact in pull request
         run: node ./script/report-size-impact/report-size-impact.js
         env:
