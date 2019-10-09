@@ -30,6 +30,8 @@ jobs:
         run: |
           git checkout $GITHUB_HEAD_REF
       - name: report size impact in pull request
-        run: node ./script/report-size-impact/report-size-impact.js
+        run: |
+          npm install
+          node ./script/report-size-impact/report-size-impact.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

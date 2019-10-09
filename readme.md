@@ -81,6 +81,8 @@ createLogger({ logLevel: LOG_LEVEL_INFO })
 
 ## Installation
 
+Before installing, please note that you cannot directly `require` this package because there is no commonjs version for the source code.
+
 If you never installed a jsenv package, read [Installing a jsenv package](https://github.com/jsenv/jsenv-core/blob/master/docs/installing-jsenv-package.md#installing-a-jsenv-package) before going further.
 
 This documentation is up-to-date with a specific version so prefer any of the following commands
