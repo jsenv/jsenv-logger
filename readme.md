@@ -6,10 +6,9 @@
 
 ## Introduction
 
-`@jsenv/logger` exists to control console verbosity during the execution of something.
+`@jsenv/logger` exists to control console verbosity inside the scope of a function.
 
-It is very simple, does on thing and does it well.
-It is used a lot in the jsenv codebase.
+It is simple, does one thing and does it well.
 
 ## Table of contents
 
@@ -18,7 +17,6 @@ It is used a lot in the jsenv codebase.
   - [Logger object](#logger-object)
   - [List of log levels](#list-of-log-levels)
   - [LOG_LEVEL constants](#loglevel-constants)
-- [Why no logger.log?](#why-not-logger-log)
 - [Installation](#installation)
 
 ## Example
@@ -45,7 +43,7 @@ functionWithLogs({ logLevel: "off" })
 
 ## api
 
-The example above is pretty self documenting.
+The example above gives already a lot of information.
 What still remains to be documented is below.
 
 ### Logger object
@@ -88,9 +86,9 @@ If you never installed a jsenv package, read [Installing a jsenv package](https:
 This documentation is up-to-date with a specific version so prefer any of the following commands
 
 ```console
-npm install @jsenv/logger@1.1.0
+npm install @jsenv/logger@2.0.0
 ```
 
 ```console
-yarn add @jsenv/logger@1.1.0
+yarn add @jsenv/logger@2.0.0
 ```
