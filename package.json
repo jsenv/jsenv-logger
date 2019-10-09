@@ -1,6 +1,7 @@
 {
   "name": "@jsenv/logger",
-  "version": "1.0.0",
+  "description": "Logger with configurable logLevel to control verbosity",
+  "version": "2.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -29,16 +30,17 @@
     "postpublish": "node ./script/transform-package/restore-postinstall.js"
   },
   "devDependencies": {
-    "@jsenv/codecov-upload": "1.9.0",
-    "@jsenv/eslint-config": "10.1.0",
-    "@jsenv/execution": "6.1.0",
-    "@jsenv/node-launcher": "4.19.0",
-    "@jsenv/node-module-import-map": "7.1.0",
-    "@jsenv/operating-system-path": "2.5.0",
-    "@jsenv/prettier-config": "1.0.0",
+    "@jsenv/codecov-upload": "2.0.0",
+    "@jsenv/continuous-size-reporting": "1.1.0",
+    "@jsenv/eslint-config": "10.2.0",
+    "@jsenv/execution": "6.2.0",
+    "@jsenv/node-launcher": "4.21.0",
+    "@jsenv/node-module-import-map": "7.2.2",
+    "@jsenv/operating-system-path": "2.5.1",
+    "@jsenv/prettier-config": "1.0.1",
     "@jsenv/prettier-check-project": "3.5.0",
-    "@jsenv/testing": "3.6.0",
-    "eslint": "6.4.0",
+    "@jsenv/testing": "3.7.0",
+    "eslint": "6.5.1",
     "prettier": "1.18.2",
     "rimraf": "3.0.0"
   }

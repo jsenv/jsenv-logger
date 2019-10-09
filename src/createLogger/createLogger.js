@@ -1,9 +1,9 @@
 import {
-  LOG_LEVEL_OFF,
-  LOG_LEVEL_ERROR,
-  LOG_LEVEL_WARN,
-  LOG_LEVEL_INFO,
   LOG_LEVEL_TRACE,
+  LOG_LEVEL_INFO,
+  LOG_LEVEL_WARN,
+  LOG_LEVEL_ERROR,
+  LOG_LEVEL_OFF,
 } from "./LOG_LEVELS.js"
 
 export const createLogger = ({ logLevel = LOG_LEVEL_INFO } = {}) => {
@@ -70,7 +70,7 @@ const trace = console.trace
 
 const traceDisabled = () => {}
 
-const info = console.log
+const info = console.info
 
 const infoDisabled = () => {}
 
