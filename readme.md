@@ -2,7 +2,7 @@
 
 [![github package](https://img.shields.io/github/package-json/v/jsenv/jsenv-logger.svg?logo=github&label=package)](https://github.com/jsenv/jsenv-logger/packages)
 [![npm package](https://img.shields.io/npm/v/@jsenv/logger.svg?logo=npm&label=package)](https://www.npmjs.com/package/@jsenv/logger)
-[![github ci](https://github.com/jsenv/jsenv-logger/workflows/ci/badge.svg)](https://github.com/jsenv/logger/actions?workflow=ci)
+[![github ci](https://github.com/jsenv/jsenv-logger/workflows/ci/badge.svg)](https://github.com/jsenv/jsenv-logger/actions?workflow=ci)
 [![codecov coverage](https://codecov.io/gh/jsenv/jsenv-logger/branch/master/graph/badge.svg)](https://codecov.io/gh/jsenv/jsenv-logger)
 
 Logger with levels to control verbosity.
