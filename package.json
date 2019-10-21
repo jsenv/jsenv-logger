@@ -1,7 +1,7 @@
 {
   "name": "@jsenv/logger",
-  "description": "Logger with configurable logLevel to control verbosity",
-  "version": "2.0.0",
+  "description": "Logger with levels to control verbosity",
+  "version": "3.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -9,7 +9,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com"
   },
   "module": "index.js",
   "files": [

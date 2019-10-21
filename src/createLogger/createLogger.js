@@ -1,5 +1,5 @@
 import {
-  LOG_LEVEL_TRACE,
+  LOG_LEVEL_DEBUG,
   LOG_LEVEL_INFO,
   LOG_LEVEL_WARN,
   LOG_LEVEL_ERROR,
@@ -7,9 +7,9 @@ import {
 } from "./LOG_LEVELS.js"
 
 export const createLogger = ({ logLevel = LOG_LEVEL_INFO } = {}) => {
-  if (logLevel === LOG_LEVEL_TRACE) {
+  if (logLevel === LOG_LEVEL_DEBUG) {
     return {
-      trace,
+      debug,
       info,
       warn,
       error,
@@ -18,7 +18,7 @@ export const createLogger = ({ logLevel = LOG_LEVEL_INFO } = {}) => {
 
   if (logLevel === LOG_LEVEL_INFO) {
     return {
-      trace: traceDisabled,
+      debug: debugDisabled,
       info,
       warn,
       error,
@@ -27,7 +27,7 @@ export const createLogger = ({ logLevel = LOG_LEVEL_INFO } = {}) => {
 
   if (logLevel === LOG_LEVEL_WARN) {
     return {
-      trace: traceDisabled,
+      debug: debugDisabled,
       info: infoDisabled,
       warn,
       error,
@@ -36,7 +36,7 @@ export const createLogger = ({ logLevel = LOG_LEVEL_INFO } = {}) => {
 
   if (logLevel === LOG_LEVEL_ERROR) {
     return {
-      trace: traceDisabled,
+      debug: debugDisabled,
       info: infoDisabled,
       warn: warnDisabled,
       error,
@@ -45,7 +45,7 @@ export const createLogger = ({ logLevel = LOG_LEVEL_INFO } = {}) => {
 
   if (logLevel === LOG_LEVEL_OFF) {
     return {
-      trace: traceDisabled,
+      debug: debugDisabled,
       info: infoDisabled,
       warn: warnDisabled,
       error: errorDisabled,
@@ -63,12 +63,12 @@ ${LOG_LEVEL_OFF}
 ${LOG_LEVEL_ERROR}
 ${LOG_LEVEL_WARN}
 ${LOG_LEVEL_INFO}
-${LOG_LEVEL_TRACE}
+${LOG_LEVEL_DEBUG}
 `
 
-const trace = console.trace
+const debug = console.debug
 
-const traceDisabled = () => {}
+const debugDisabled = () => {}
 
 const info = console.info
 

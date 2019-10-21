@@ -1,25 +1,36 @@
-# jsenv-logger
+# Logger
 
-[![github package](https://img.shields.io/github/package-json/v/jsenv/jsenv-logger.svg?label=package&logo=github)](https://github.com/jsenv/jsenv-logger/packages)
-[![workflow status](https://github.com/jsenv/jsenv-logger/workflows/continuous%20testing/badge.svg)](https://github.com/jsenv/jsenv-logger/actions?workflow=continuous+testing)
-[![codecov](https://codecov.io/gh/jsenv/jsenv-logger/branch/master/graph/badge.svg)](https://codecov.io/gh/jsenv/jsenv-logger)
+[![github package](https://img.shields.io/github/package-json/v/jsenv/jsenv-logger.svg?logo=github&label=package)](https://github.com/jsenv/jsenv-logger/packages)
+[![npm package](https://img.shields.io/npm/v/@jsenv/logger.svg?logo=npm&label=package)](https://www.npmjs.com/package/@jsenv/logger)
+[![github ci](https://github.com/jsenv/jsenv-logger/workflows/ci/badge.svg)](https://github.com/jsenv/logger/actions?workflow=ci)
+[![codecov coverage](https://codecov.io/gh/jsenv/jsenv-logger/branch/master/graph/badge.svg)](https://codecov.io/gh/jsenv/jsenv-logger)
 
-## Introduction
-
-`@jsenv/logger` exists to control console verbosity inside the scope of a function.
-
-It is simple, does one thing and does it well.
+Logger with levels to control verbosity.
 
 ## Table of contents
 
-- [Example](#example)
-- [api](#api)
-  - [Logger object](#logger-object)
-  - [List of log levels](#list-of-log-levels)
-  - [LOG_LEVEL constants](#loglevel-constants)
+- [Presentation](#Presentation)
+- [Usage](#usage)
+  - [createLogger](#createLogger)
+  - [logger](#logger)
+  - [logLevel](#logLevel)
+  - [Migration from console](#migration-from-console)
 - [Installation](#installation)
 
-## Example
+## Presentation
+
+`jsenv-logger` github repository corresponds to `@jsenv/logger` package published on github and npm package registries.
+
+You want to use `@jsenv/logger` when you have many logs with different purposes and controls which type of logs are actually written.
+
+## Usage
+
+This documentation explains how to use `@jsenv/logger` in your codebase.
+
+### createLogger
+
+> Returns a `logger` object with methods being silent according to a given `logLevel`.<br />
+> Implemented by [src/createLogger/createLogger.js](src/createLogger/createLogger.js)
 
 ```js
 import { createLogger } from "@jsenv/logger"
@@ -27,57 +38,60 @@ import { createLogger } from "@jsenv/logger"
 const functionWithLogs = ({ logLevel }) => {
   const logger = createLogger({ logLevel })
 
-  logger.info("start doing whetevr")
-  logger.info("doing whatever is done")
+  logger.debug("start doing whetevr")
+  logger.info("some useful info")
+  logger.debug("doing whatever is done")
   logger.warn("be careful about blah-blah")
   logger.error("oops an error occured while doing whatever")
 }
 
+functionWithLogs({ logLevel: "debug" })
 functionWithLogs({ logLevel: "info" })
 functionWithLogs({ logLevel: "warn" })
 functionWithLogs({ logLevel: "error" })
 functionWithLogs({ logLevel: "off" })
 ```
 
-— see [source code on github](./src/createLogger/createLogger.js)
+### logger
 
-## api
+A `logger` is an object with the following methods:
 
-The example above gives already a lot of information.
-What still remains to be documented is below.
-
-### Logger object
-
-A logger returned by `createLogger` is an object with the following methods:
-
-- `trace`
+- `debug`
 - `info`
 - `warn`
 - `error`
 
 Each method calls the corresponding console method or do nothing depending on the `logLevel`.
 
-Because saying a log level of `"log"` would be strange there is no logLevel named `"log"`.
-`"info"` was choosen instead meaning logger calls `console.info`, never `console.log`.
+### logLevel
 
-### List of log levels
+`logLevel` can be one of the following:
 
 - `"off"`
-- `"trace"`
+- `"debug"`
 - `"info"`
 - `"warn"`
 - `"error"`
 
-### LOG_LEVEL constants
-
-`@jsenv/logger` exports `LOG_LEVEL_*` constants corresponding to the log level strings above.<br />
-If you are rigorous you can import and use them like this:
+If you are rigorous you can import them to use constants like this:
 
 ```js
 import { createLogger, LOG_LEVEL_INFO } from "@jsenv/logger"
 
 createLogger({ logLevel: LOG_LEVEL_INFO })
 ```
+
+### Migration from console
+
+Using `@jsenv/logger` means converting console methods into logger methods: `console.info` becomes `logger.info`.
+
+But keep in mind there is no `logger.log`. This is because a log level named "log" would not fit into the log level hierachy below.
+
+```
+error > warn > info > debug
+```
+
+It means you have to convert `console.log` into `logger.debug` or `logger.info`.
 
 ## Installation
 

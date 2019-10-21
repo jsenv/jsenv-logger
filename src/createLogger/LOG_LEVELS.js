@@ -1,4 +1,4 @@
-export const LOG_LEVEL_TRACE = "trace"
+export const LOG_LEVEL_DEBUG = "debug"
 
 export const LOG_LEVEL_INFO = "info"
 
