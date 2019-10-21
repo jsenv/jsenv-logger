@@ -1,4 +1,4 @@
-name: continuous testing
+name: ci
 
 on:
   push:
@@ -9,21 +9,19 @@ on:
       - master
 
 jobs:
-  build:
+  ci:
     name: node 12 on ubuntu
     runs-on: ubuntu-latest
     env:
       CI: true
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
+      - uses: actions/setup-node@v1
         with:
           node-version: 12.8.0
-      - name: npm configuration
-        run: npm config set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN }}
       - name: npm install
-        run: npm install
+          npm config set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN }}
+          npm install
       - name: code quality
         run: npm run eslint-check
       - name: code format
