@@ -118,9 +118,9 @@ If you never installed a jsenv package, read [Installing a jsenv package](https:
 This documentation is up-to-date with a specific version so prefer any of the following commands
 
 ```console
-npm install @jsenv/logger@3.1.0
+npm install @jsenv/logger@3.2.0
 ```
 
 ```console
-yarn add @jsenv/logger@3.1.0
+yarn add @jsenv/logger@3.2.0
 ```
