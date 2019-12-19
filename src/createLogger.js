@@ -52,10 +52,7 @@ export const createLogger = ({ logLevel = LOG_LEVEL_INFO } = {}) => {
     }
   }
 
-  throw new Error(createUnexpectedLogLevelMessage({ logLevel }))
-}
-
-const createUnexpectedLogLevelMessage = ({ logLevel }) => `unexpected logLevel.
+  throw new Error(`unexpected logLevel.
 --- logLevel ---
 ${logLevel}
 --- allowed log levels ---
@@ -63,8 +60,8 @@ ${LOG_LEVEL_OFF}
 ${LOG_LEVEL_ERROR}
 ${LOG_LEVEL_WARN}
 ${LOG_LEVEL_INFO}
-${LOG_LEVEL_DEBUG}
-`
+${LOG_LEVEL_DEBUG}`)
+}
 
 const debug = console.debug
 
@@ -81,3 +78,23 @@ const warnDisabled = () => {}
 const error = console.error
 
 const errorDisabled = () => {}
+
+const disabledMethods = {
+  debug: debugDisabled,
+  info: infoDisabled,
+  warn: warnDisabled,
+  error: errorDisabled,
+}
+
+export const loggerIsMethodEnabled = (logger, methodName) => {
+  return logger[methodName] !== disabledMethods[methodName]
+}
+
+export const loggerToLevels = (logger) => {
+  return {
+    debug: loggerIsMethodEnabled(logger, "debug"),
+    info: loggerIsMethodEnabled(logger, "info"),
+    warn: loggerIsMethodEnabled(logger, "warn"),
+    error: loggerIsMethodEnabled(logger, "error"),
+  }
+}

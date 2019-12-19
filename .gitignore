@@ -3,4 +3,5 @@
 /dist/
 /node_modules/
 /importMap.json
+/package-lock.json
 !.eslintrc.js
