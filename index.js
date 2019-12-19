@@ -1,4 +1,4 @@
-export { createLogger } from "./src/createLogger/createLogger.js"
+export { createLogger, loggerIsMethodEnabled, loggerToLevels } from "./src/createLogger.js"
 
 export {
   LOG_LEVEL_OFF,
@@ -6,4 +6,4 @@ export {
   LOG_LEVEL_INFO,
   LOG_LEVEL_WARN,
   LOG_LEVEL_ERROR,
-} from "./src/createLogger/LOG_LEVELS.js"
+} from "./src/LOG_LEVELS.js"

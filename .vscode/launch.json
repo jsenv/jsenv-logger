@@ -8,10 +8,7 @@
       "protocol": "inspector",
       "program": "${file}",
       "autoAttachChildProcesses": true,
-      "sourceMaps": false,
-      "sourceMapPathOverrides": {
-        "/*": "${workspaceFolder}/*"
-      },
+      "sourceMaps": true,
       "smartStep": true,
       "skipFiles": [
         // force-array-multiline
@@ -30,9 +27,6 @@
       "args": ["${relativeFile}"],
       "autoAttachChildProcesses": true,
       "sourceMaps": true,
-      "sourceMapPathOverrides": {
-        "/*": "${workspaceFolder}/*"
-      },
       "smartStep": true,
       "skipFiles": [
         // force-array-multiline
@@ -51,9 +45,6 @@
       "port": 40000,
       "smartStep": true,
       "sourceMaps": true,
-      "sourceMapPathOverrides": {
-        "/*": "${workspaceFolder}/*"
-      },
       "skipFiles": [
         "node_modules/@babel/template/**",
         "node_modules/@babel/core/**",

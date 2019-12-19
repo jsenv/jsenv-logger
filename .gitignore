@@ -1,10 +1,7 @@
-/.dist/
-/.vscode/settings.json
+/.jsenv/
 /coverage/
 /dist/
 /node_modules/
 /importMap.json
-/jsconfig.json
-/secrets.json
 /package-lock.json
-/yarn.lock
+!.eslintrc.js
