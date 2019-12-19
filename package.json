@@ -1,6 +1,6 @@
 {
   "name": "@jsenv/logger",
-  "description": "Logger with levels to control verbosity",
+  "description": "Control verbosity of logs during a function execution.",
   "version": "3.1.0",
   "license": "MIT",
   "repository": {
@@ -18,9 +18,9 @@
   ],
   "scripts": {
     "test": "node ./script/test/test.js",
+    "test-with-coverage": "node ./script/test/test.js --coverage",
     "eslint-check": "eslint .",
     "prettier-check": "node ./script/prettier-check/prettier-check.js",
-    "generate-coverage": "node ./script/generate-coverage/generate-coverage.js",
     "upload-coverage": "node ./script/upload-coverage/upload-coverage.js",
     "generate-import-map": "node ./script/generate-import-map/generate-import-map.js",
     "clean": "rimraf dist && rimraf coverage",
@@ -30,18 +30,18 @@
     "postpublish": "node ./script/transform-package/restore-postinstall.js"
   },
   "devDependencies": {
-    "@jsenv/auto-publish": "1.9.0",
-    "@jsenv/codecov-upload": "2.0.0",
-    "@jsenv/eslint-config": "10.2.0",
-    "@jsenv/execution": "6.11.0",
-    "@jsenv/node-launcher": "4.26.0",
-    "@jsenv/node-module-import-map": "8.2.1",
-    "@jsenv/operating-system-path": "2.5.1",
-    "@jsenv/prettier-config": "1.0.1",
-    "@jsenv/prettier-check-project": "3.5.0",
-    "@jsenv/testing": "3.9.0",
-    "eslint": "6.5.1",
-    "prettier": "1.18.2",
+    "@jsenv/assert": "1.1.1",
+    "@jsenv/codecov-upload": "3.0.0",
+    "@jsenv/core": "10.3.2",
+    "@jsenv/eslint-config": "12.0.0",
+    "@jsenv/github-release-package": "1.1.1",
+    "@jsenv/node-module-import-map": "9.4.0",
+    "@jsenv/package-publish": "1.1.0",
+    "@jsenv/prettier-config": "1.1.0",
+    "@jsenv/prettier-check-project": "4.1.0",
+    "babel-eslint": "11.0.0-beta.0",
+    "eslint": "6.7.2",
+    "prettier": "1.19.1",
     "rimraf": "3.0.0"
   }
 }
