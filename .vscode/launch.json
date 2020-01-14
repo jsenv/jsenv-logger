@@ -7,14 +7,15 @@
       "request": "launch",
       "protocol": "inspector",
       "program": "${file}",
+      "runtimeVersion": "13.6.0",
       "autoAttachChildProcesses": true,
       "sourceMaps": true,
       "smartStep": true,
       "skipFiles": [
         // force-array-multiline
-        // "node_modules/**",
-        "node_modules/@babel/template/**",
-        "node_modules/@dmail/cancellation/**",
+        "node_modules/@babel/**",
+        "node_modules/@jsenv/cancellation/**",
+        "node_modules/regenerator-trasform/**",
         "<node_internals>/**/*.js"
       ]
     },
@@ -29,12 +30,9 @@
       "sourceMaps": true,
       "smartStep": true,
       "skipFiles": [
-        // force-array-multiline
         // "node_modules/**",
-        "node_modules/@babel/template/**",
-        "node_modules/@babel/core/**",
-        "node_modules/@dmail/cancellation/**",
-        "node_modules/rollup-plugin-node-resolve/**",
+        "node_modules/@babel/**",
+        "node_modules/@jsenv/cancellation/**",
         "<node_internals>/**/*.js"
       ]
     },
@@ -46,10 +44,9 @@
       "smartStep": true,
       "sourceMaps": true,
       "skipFiles": [
-        "node_modules/@babel/template/**",
-        "node_modules/@babel/core/**",
-        "node_modules/@dmail/cancellation/**",
-        "node_modules/rollup-plugin-node-resolve/**",
+        // "node_modules/**",
+        "node_modules/@babel/**",
+        "node_modules/@jsenv/cancellation/**",
         "<node_internals>/**/*.js"
       ]
     }
