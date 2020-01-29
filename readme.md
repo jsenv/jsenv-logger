@@ -25,10 +25,8 @@ You want to use `@jsenv/logger` when you have many logs with different purposes 
 
 # Installation
 
-Before installing, please note that you cannot directly `require` this package because there is no commonjs version for the source code.
-
 ```console
-npm install @jsenv/logger@3.3.0
+npm install @jsenv/logger@3.3.1
 ```
 
 # Documentation

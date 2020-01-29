@@ -6,4 +6,3 @@ generateImportMapForProjectPackage({
   importMapFile: true,
   jsConfigFile: true,
 })
-
