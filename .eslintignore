@@ -1,6 +1,4 @@
-!./github/
 /.jsenv/
 /coverage/
 /dist/
 /node_modules/
-!.eslintrc.js

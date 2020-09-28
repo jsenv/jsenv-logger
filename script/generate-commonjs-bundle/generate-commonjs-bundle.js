@@ -1,6 +1,7 @@
-const { generateCommonJsBundleForNode } = require("@jsenv/core")
-const jsenvConfig = require("../../jsenv.config.js")
+import { generateCommonJsBundleForNode } from "@jsenv/core"
+import * as jsenvConfig from "../../jsenv.config.js"
 
 generateCommonJsBundleForNode({
   ...jsenvConfig,
+  bundleDirectoryClean: true,
 })
