@@ -2,6 +2,7 @@
 /coverage/
 /node_modules/
 /importMap.json
-/package-lock.json
 /jsconfig.json
 /secrets.json
+/package-lock.json
+/yarn.lock

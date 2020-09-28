@@ -98,3 +98,11 @@ export const loggerToLevels = (logger) => {
     error: loggerIsMethodEnabled(logger, "error"),
   }
 }
+
+export const loggerToLogLevel = (logger) => {
+  if (loggerIsMethodEnabled(logger, "debug")) return LOG_LEVEL_DEBUG
+  if (loggerIsMethodEnabled(logger, "info")) return LOG_LEVEL_INFO
+  if (loggerIsMethodEnabled(logger, "warn")) return LOG_LEVEL_WARN
+  if (loggerIsMethodEnabled(logger, "error")) return LOG_LEVEL_ERROR
+  return LOG_LEVEL_OFF
+}
