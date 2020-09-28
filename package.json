@@ -33,15 +33,16 @@
 		"upload-coverage": "node --no-warnings ./script/upload-coverage/upload-coverage.js",
 		"generate-commonjs-bundle": "node --no-warnings ./script/generate-commonjs-bundle/generate-commonjs-bundle.js",
 		"generate-import-map": "node --no-warnings ./script/generate-import-map/generate-import-map.js",
-		"dist": "npm run generate-esmodule-bundle && npm run generate-commonjs-bundle && npm run generate-global-bundle",
+		"dist": "npm run generate-commonjs-bundle",
 		"postinstall": "npm run generate-import-map",
 		"prepublishOnly": "node ./script/transform-package/remove-postinstall.js && npm run dist",
 		"postpublish": "node ./script/transform-package/restore-postinstall.js"
 	},
 	"dependencies": {},
 	"devDependencies": {
+		"@jsenv/assert": "2.2.1",
 		"@jsenv/codecov-upload": "3.4.2",
-		"@jsenv/core": "13.3.2",
+		"@jsenv/core": "15.0.3",
 		"@jsenv/eslint-config": "12.5.0",
 		"@jsenv/github-release-package": "1.2.2",
 		"@jsenv/node-module-import-map": "12.0.2",
