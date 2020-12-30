@@ -12,3 +12,5 @@ export {
   LOG_LEVEL_WARN,
   LOG_LEVEL_ERROR,
 } from "./src/LOG_LEVELS.js"
+
+export { createDetailedMessage } from "./src/createDetailedMessage.js"
