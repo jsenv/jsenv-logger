@@ -99,13 +99,35 @@ const loggerToLevels = logger => {
     error: loggerIsMethodEnabled(logger, "error")
   };
 };
+const loggerToLogLevel = logger => {
+  if (loggerIsMethodEnabled(logger, "debug")) return LOG_LEVEL_DEBUG;
+  if (loggerIsMethodEnabled(logger, "info")) return LOG_LEVEL_INFO;
+  if (loggerIsMethodEnabled(logger, "warn")) return LOG_LEVEL_WARN;
+  if (loggerIsMethodEnabled(logger, "error")) return LOG_LEVEL_ERROR;
+  return LOG_LEVEL_OFF;
+};
+
+const createDetailedMessage = (message, details = {}) => {
+  let string = `${message}`;
+  Object.keys(details).forEach(key => {
+    const value = details[key];
+    string += `
+--- ${key} ---
+${Array.isArray(value) ? value.join(`
+`) : value}`;
+  });
+  return string;
+};
 
 exports.LOG_LEVEL_DEBUG = LOG_LEVEL_DEBUG;
 exports.LOG_LEVEL_ERROR = LOG_LEVEL_ERROR;
 exports.LOG_LEVEL_INFO = LOG_LEVEL_INFO;
 exports.LOG_LEVEL_OFF = LOG_LEVEL_OFF;
 exports.LOG_LEVEL_WARN = LOG_LEVEL_WARN;
+exports.createDetailedMessage = createDetailedMessage;
 exports.createLogger = createLogger;
 exports.loggerIsMethodEnabled = loggerIsMethodEnabled;
 exports.loggerToLevels = loggerToLevels;
+exports.loggerToLogLevel = loggerToLogLevel;
+
 //# sourceMappingURL=main.cjs.map

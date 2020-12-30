@@ -1,5 +1,5 @@
 import { assert } from "@jsenv/assert"
-import { createLogger, loggerToLevels } from "../index.js"
+import { createLogger, loggerToLevels } from "@jsenv/logger"
 
 try {
   createLogger({ logLevel: "foo" })
