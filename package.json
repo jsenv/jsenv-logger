@@ -1,6 +1,6 @@
 {
 	"name": "@jsenv/logger",
-	"version": "4.0.0",
+	"version": "4.0.1",
 	"description": "Control verbosity of logs during a function execution.",
 	"license": "MIT",
 	"repository": {
@@ -18,7 +18,7 @@
       "node": "./main.node.js",
       "import": "./main.node.js"
     },
-    "./": "./"
+    "./*": "./*"
 	},
 	"main": "dist/commonjs/main.cjs",
 	"files": [
