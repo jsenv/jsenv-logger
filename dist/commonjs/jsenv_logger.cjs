@@ -130,4 +130,4 @@ exports.loggerIsMethodEnabled = loggerIsMethodEnabled;
 exports.loggerToLevels = loggerToLevels;
 exports.loggerToLogLevel = loggerToLogLevel;
 
-//# sourceMappingURL=main.cjs.map
+//# sourceMappingURL=jsenv_logger.cjs.map

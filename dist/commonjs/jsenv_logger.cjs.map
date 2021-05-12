@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "file": "main.cjs",
+  "file": "jsenv_logger.cjs",
   "sources": [
     "../../src/LOG_LEVELS.js",
     "../../src/createLogger.js",
